@@ -6,7 +6,7 @@
 		<h4>Всю документацию о проекте вы можете найти <a href = "documentation.pdf">здесь</a></h4>
 		<hr>
 		<h3>Jira</h3>
-		<h4>Наша <a href = "">Аgile-доска</a> в <a href = "https://www.atlassian.com/ru/software/jira">Jira</a></h4>
+		<h4>Наша <a href = "https://opml.atlassian.net/jira/software/projects/MC8/boards/7">Аgile-доска</a> в <a href = "https://www.atlassian.com/ru/software/jira">Jira</a></h4>
 		<hr>
 		<h3>Решение задач</h3>
 		<h4>Решить свою задачу можно в <a href="https://colab.research.google.com/drive/1B26CcmvEIhpWNo7jkL4VrJ2QIwDRL3CO?usp=sharing">Google Colab</a> </h4>
