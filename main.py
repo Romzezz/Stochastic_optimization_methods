@@ -15,6 +15,22 @@ from tqdm.notebook import tqdm
 
 
 def getBatch(X, Y, batch_size):
+    '''
+    Возвращает батчи входных данных.
+            Параметры:
+                    X (np.ndarray): 
+                        массив признаков обучающей выборки
+                    Y (np.array): 
+                        Вектор меток целевого признака обучающей выборки
+                    batch_size (int): 
+                        размер батча
+                        
+            Возвращаемое значение:
+                    X_batch (np.ndarray):
+                        батч X
+                    Y_batch (np.array):
+                        батч Y
+    '''
     batch_indxs = np.random.choice(len(X), size=batch_size, replace=False)
     X_batch = X[batch_indxs]
     Y_batch = Y[batch_indxs]
@@ -25,6 +41,17 @@ def getBatch(X, Y, batch_size):
 
 
 def predict(x, H_params):
+    '''
+    Возвращает предсказание для нового экземпляра.
+            Параметры:
+                    x (np.array): 
+                        массив признаков нового экземпляра
+                    H_params (tuple): 
+                        кортеж с гиперпараметрами модели
+                        
+            Возвращаемое значение:
+                    предсказание для нового экземпляра (float)
+    '''
     W, b = H_params
     return (np.dot(W.transpose(), x) + b)
 
@@ -32,8 +59,22 @@ def predict(x, H_params):
 # In[4]:
 
 
-def plotHyperPlane(ax, X, Y, H_params, t=None, lr_t=None):
-    # plot the line, the points, and the nearest vectors to the plane
+def plotHyperPlane(ax, X, Y, H_params):
+    '''
+    Строит точки и разделяющие опорные вектора.
+            Параметры:
+                    ax : 
+                        ось
+                    X (np.ndarray): 
+                        массив признаков обучающей выборки
+                    Y (np.array): 
+                        Вектор меток целевого признака обучающей выборки
+                    H_params (tuple): 
+                        кортеж с гиперпараметрами модели
+                        
+            Возвращаемое значение:
+                    None
+    '''
     x1min, x2min = np.min(X, axis=0)
     x1max, x2max = np.max(X, axis=0)
     xx = np.linspace(x1min, x1max, 10)
@@ -58,6 +99,23 @@ def plotHyperPlane(ax, X, Y, H_params, t=None, lr_t=None):
 
 
 def SVM_SGD(X, Y, X_new, C=0.1, plot=False):
+    '''
+    Классификация на 2 класса методом опорных векторов с использованием градиентного спуска.
+            Параметры:
+                    X (np.ndarray): 
+                        массив признаков обучающей выборки
+                    Y (np.array): 
+                        Вектор меток целевого признака обучающей выборки
+                    X_new (np.ndarray): 
+                        массив признаков тестовой выборки
+                    C (float default=0.1): 
+                        параметр регуляризации
+                    plot (bool default=False):
+                        Если True, визиализирует классификацию
+                        
+            Возвращаемое значение:
+                    словарь с гипепараметрами и прогнозами для тестовых данных
+    '''
     W = np.random.rand(2,1)
     b = np.random.rand()
     H_params = W,b
