@@ -1,6 +1,6 @@
 <html>
 	<body>
-		<h2>Оптимизационные задачи в машинном обучении. <br> Проект № : .</h2>
+		<h2>Оптимизационные задачи в машинном обучении. <br> Проект №8 : Методы стохастической оптимизации.</h2>
 		<hr>
 		<h3>Документация</h3>
 		<h4>Всю документацию о проекте вы можете найти <a href = "documentation.pdf">здесь</a></h4>
@@ -9,7 +9,7 @@
 		<h4>Наша <a href = "">Аgile-доска</a> в <a href = "https://www.atlassian.com/ru/software/jira">Jira</a></h4>
 		<hr>
 		<h3>Решение задач</h3>
-		<h4>Решить свою задачу можно в <a href="">Google Colab</a> </h4>
+		<h4>Решить свою задачу можно в <a href="https://colab.research.google.com/drive/1psYLe59dnz2jE0VjejNeB6ZqmgHNUJmd?usp=sharing">Google Colab</a> </h4>
 		<hr>
 		<h3>Примеры решения задач</h3>
 		<h5>Ввод параметров функции: </h5> 
