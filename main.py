@@ -159,29 +159,6 @@ def SVM_SGD(X, Y, X_new, C=0.1, plot=False):
     if plot:
         fig, ax = plt.subplots()
         ax.set_xlabel("x1");  ax.set_ylabel("x2")
-        plotHyperPlane(ax, X_new, Y_new,  (W,b), t=t,lr_t=lr_t)
+        plotHyperPlane(ax, X_new, Y_new,  (W,b))
 
     return {'W': W, 'b': b, 'Y_new': Y_new}
-
-
-# In[6]:
-
-
-X, Y = make_blobs(n_samples=1000, centers=2, random_state=0, cluster_std=0.60)
-Y[Y==0] = -1
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
-plt.scatter(X[:, 0], X[:, 1], c=Y)
-plt.show()
-
-
-# In[7]:
-
-
-res = SVM_SGD(X_train, Y_train, X_test, C=0.1, plot=True)
-
-
-# In[8]:
-
-
-from sklearn.metrics import accuracy_score
-print(accuracy_score(Y_test, res['Y_new']))
